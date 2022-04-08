@@ -1,3 +1,14 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.9.0](https://github.com/Laev/Publisher/compare/v0.8.4-rc7...v0.9.0) (2022-04-08)
+
+
+### Features
+
+* **env:** 在配置文件中装载敏感信息 & 尝试使用github action ([365e97b](https://github.com/Laev/Publisher/commit/365e97be2b00199108db61474a965c22298fa2c5))
+
 <!--
  * @Author: Whzcorcd
  * @Date: 2020-12-15 14:43:54
