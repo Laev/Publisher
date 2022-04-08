@@ -5,28 +5,36 @@ name: Deployment
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    tags:
+    - 'v*'
 
 jobs:
   build-job:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
     strategy:
       matrix:
-        node-version: [14.x]
+        os: [ubuntu-latest]
+        package_manager: [npm, yarn]
+
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Check out Git repository
+      uses: actions/checkout@v3
+
+    - name: Use Node.js 14
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 14.x
         cache: 'yarn'
-    - run: yarn install
-    - run: yarn electron:build
-    - run: yarn electron:win-build
-    - run: yarn electron:release
-    - run: yarn electron:win-release
+    
+    - name: Install Dependencies
+      run: ${{ matrix.package_manager }} install
+    
+    - name: Build
+      run: ${{ matrix.package_manager }} electron:build
+      
+    - name: Win build  
+      run: ${{ matrix.package_manager }} electron:win-build
 
   deploy-job:
     runs-on: ubuntu-latest
@@ -34,5 +42,5 @@ jobs:
       matrix:
         node-version: [14.x]
     steps:
-    - run: yarn electron:release
-    - run: yarn electron:win-release
+    - run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && ${{ matrix.package_manager }} electron:release
+    - run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && ${{ matrix.package_manager }} electron:win-release
