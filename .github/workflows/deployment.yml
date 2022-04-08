@@ -9,13 +9,13 @@ on:
     - 'v*'
 
 jobs:
-  build-job:
+  buildAndRelease:
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
         os: [ubuntu-latest]
-        package_manager: [npm, yarn]
+        # package_manager: [npm, yarn]
 
     steps:
     - name: Check out Git repository
@@ -28,19 +28,16 @@ jobs:
         cache: 'yarn'
     
     - name: Install Dependencies
-      run: ${{ matrix.package_manager }} install
+      run: yarn install
     
     - name: Build
-      run: ${{ matrix.package_manager }} electron:build
+      run: yarn electron:build
       
     - name: Win build  
-      run: ${{ matrix.package_manager }} electron:win-build
+      run: yarn electron:win-build
 
-  deploy-job:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-    steps:
-    - run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && ${{ matrix.package_manager }} electron:release
-    - run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && ${{ matrix.package_manager }} electron:win-release
+    - name: Release
+      run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && yarn electron:release
+      
+    - name: Win release
+    - run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && yarn electron:win-release
