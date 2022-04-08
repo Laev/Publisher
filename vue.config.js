@@ -6,6 +6,11 @@
  * @Description: file content
  */
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
+const envPath =
+  !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
+    ? './env/.env.local'
+    : `./env/.env`
 
 function resolve(dir) {
   return path.join(__dirname, dir)
@@ -53,7 +58,8 @@ module.exports = {
           }
         }
       ]
-    }
+    },
+    plugins: [new Dotenv({ expand: true, path: envPath })]
   },
   pluginOptions: {
     electronBuilder: {
@@ -61,14 +67,14 @@ module.exports = {
       builderOptions: {
         appId: 'com.gdyfe',
         productName: 'Publisher',
-        copyright: 'Copyright © 2020 Whzcorcd',
+        copyright: 'Copyright © 2022 Guangdianyun',
         directories: {
           output: './dist_electron' // 输出文件路径
         },
         publish: [
           {
             provider: 'github',
-            owner: 'corcd',
+            owner: 'Laev',
             repo: 'Publisher',
             releaseType: 'draft'
           }

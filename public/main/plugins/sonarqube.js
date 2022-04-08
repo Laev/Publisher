@@ -6,12 +6,9 @@
  * @Description: file content
  */
 import scanner from 'sonarqube-scanner'
-import { sonarqube } from '@/config'
 
-const {
-  server,
-  authorization: { token }
-} = sonarqube
+const server = process.env.SONARQUBE_SERVER
+const token = process.env.SONARQUBE_TOKEN
 
 export const scan = async (projectName, tmpPath) => {
   return new Promise((resolve, reject) => {

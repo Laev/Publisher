@@ -6,10 +6,12 @@
  * @Description: file content
  */
 import _axios from '@/request'
-import { gitlab } from '@/config'
 import qs from 'qs'
 
-const { baseUrl, authorization } = gitlab
+const baseUrl = process.env.GITLAB_BASEURL
+const authorization = {
+  private_token: process.env.GITLAB_PRIVATE_TOKEN
+}
 
 const request = (restfulUrl, method, params = {}) => {
   return _axios({

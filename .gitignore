@@ -1,8 +1,6 @@
 .DS_Store
 node_modules
-db.json
 /dist
-
 
 # local env files
 .env.local
@@ -26,5 +24,8 @@ pnpm-debug.log*
 #Electron-builder output
 /dist_electron
 
-#Config module
-/src/config/index.js
+#soft data
+db.json
+
+# Key variable
+.env

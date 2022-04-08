@@ -7,10 +7,12 @@
  */
 import qs from 'qs'
 import _axios from '@/request'
-import { jenkins } from '@/config'
 
-const { baseUrl, authorization } = jenkins
-
+const baseUrl = process.env.JENKINS_BASEURL
+const authorization = {
+  username: process.env.JENKINS_USERNAME,
+  password: process.env.JENKINS_PASSWORD
+}
 const request = (
   actionUrl,
   method,

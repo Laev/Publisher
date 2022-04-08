@@ -5,7 +5,7 @@
  * @LastEditTime: 2021-07-16 17:57:24
  * @Description: file content
  */
-import { envTypes } from '@/config'
+const envTypes = JSON.parse(process.env.ENVTYPES_ARRAY)
 
 export const originalEnvTypes = envTypes
 

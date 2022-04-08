@@ -8,12 +8,10 @@
 import { encode } from 'js-base64'
 import qs from 'qs'
 import _axios from '@/request'
-import { sonarqube } from '@/config'
 
-const {
-  server,
-  authorization: { username, password }
-} = sonarqube
+const server = process.env.SONARQUBE_SERVER
+const username = process.env.SONARQUBE_USERNAME
+const password = process.env.SONARQUBE_PASSWORD
 
 const request = (url, method = 'GET', params = {}) => {
   return _axios({

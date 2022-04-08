@@ -207,6 +207,7 @@ export default {
           parsedJobConfig.project.scm[0].userRemoteConfigs[0][
             'hudson.plugins.git.UserRemoteConfig'
           ][0].url[0] || ''
+        // TODO 优化正则为适配外部配置
         const repoUrl = gitUrl.match(
           /http:\/\/gitlab\.aodianyun\.com\/*\/(\S*)\.git/i
         )

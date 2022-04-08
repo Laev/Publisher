@@ -7,14 +7,16 @@
  */
 import JSEncrypt from 'jsencrypt/bin/jsencrypt'
 
-export const encrypt = ({ value, pubKey }) => {
+// 加密
+export const encrypt = ({ value, privateKey }) => {
   const jsencrypt = new JSEncrypt()
-  jsencrypt.setPublicKey(pubKey)
+  jsencrypt.setPublicKey(privateKey)
   return jsencrypt.encrypt(value)
 }
 
-export const decrypt = ({ cipherText, privateKey }) => {
+// 解密
+export const decrypt = ({ value, privateKey }) => {
   const jsdecrypt = new JSEncrypt()
   jsdecrypt.setPrivateKey(privateKey)
-  return jsdecrypt.decrypt(cipherText)
+  return jsdecrypt.decrypt(value)
 }

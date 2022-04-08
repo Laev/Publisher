@@ -35,10 +35,10 @@ const defaultData = {
     workmail: ''
   },
   mail: {
-    addressee: 'guangdianyun@aodiansoft.com',
+    addressee: process.env.DEF_MAIL_ADDRESSEE,
     auth: {
-      user: 'wanghanze@aodiansoft.com', // 发件人
-      pass: '4TdSaT7doqovs7dn' // 授权码
+      user: process.env.DEF_MAIL_SENDER_USER, // 发件人
+      pass: process.env.DEF_MAIL_SENDER_PASS // 授权码
     }
   }
 }

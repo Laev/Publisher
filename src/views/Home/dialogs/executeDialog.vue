@@ -132,9 +132,10 @@
 import dayjs from 'dayjs'
 // import { Message } from 'element-ui'
 import { getOneRecord } from '#/plugins/data'
-import { pmList } from '@/config'
 import { originalEnvTypes, originalTasksTypes } from '@/modules/task/types'
 import { getProject, listMergeRequests } from '@/plugins/gitlab'
+
+const pmList = JSON.parse(process.env.PMLIST_ARRAY)
 
 export default {
   name: 'ExecuteDialog',

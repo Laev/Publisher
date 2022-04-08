@@ -6,11 +6,10 @@
  * @Description: file content
  */
 import { ROAClient } from '@alicloud/pop-core'
-import { aliyun } from '@/config'
 
-const { regionId, authorization } = aliyun
-const { accessKeyId, accessKeySecret } = authorization
-
+const regionId = process.env.ALIYUN_REGIONID
+const accessKeyId = process.env.ALIYUN_ACCESSKEYID
+const accessKeySecret = process.env.ALIYUN_ACCESSKEYSECRET
 class CsClient extends ROAClient {
   constructor(config) {
     config.apiVersion = '2015-12-15'

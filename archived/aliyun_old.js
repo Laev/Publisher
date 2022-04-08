@@ -8,9 +8,12 @@
 import http from 'http'
 import crypto from 'crypto'
 import { nanoid } from 'nanoid'
-import { aliyun } from '@/config'
 
-const { regionId, authorization } = aliyun
+const regionId = process.env.ALIYUN_REGIONID
+const authorization = {
+  accessKeyId: process.env.ALIYUN_ACCESSKEYID,
+  accessKeySecret: process.env.ALIYUN_ACCESSKEYSECRET
+}
 
 const getSignature = ({ method, headers, path }) => {
   const { accessKeyId, accessKeySecret } = authorization

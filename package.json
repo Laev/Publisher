@@ -2,7 +2,7 @@
   "name": "publisher",
   "version": "0.8.4-rc7",
   "description": "Frontend Publisher",
-  "author": "whzcorcd <whzcorcd@gmail.com>",
+  "author": "levlin",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -28,6 +28,7 @@
     "core-js": "^3.6.5",
     "crypto-js": "^4.0.0",
     "dayjs": "^1.9.6",
+    "dotenv-webpack": "^7.1.0",
     "download-git-repo": "^3.0.2",
     "ejs": "^3.1.6",
     "electron-log": "^4.3.1",

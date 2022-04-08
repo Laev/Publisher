@@ -11,7 +11,6 @@ import rimraf from 'rimraf'
 import path from 'path'
 import { scan } from '#/plugins/sonarqube'
 import { getOneRecord } from '#/plugins/data'
-import { gitlab } from '@/config'
 import { getProjectQualityGates } from '@/plugins/sonarqube'
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -19,10 +18,9 @@ const APP = process.type === 'renderer' ? remote.app : app
 
 const SCAN_FILES_PATH = APP.getPath('userData')
 
-const {
-  host,
-  authorization: { username, password }
-} = gitlab
+const host = process.env.GITLAB_HOST
+const username = process.env.GITLAB_USERNAME
+const password = process.env.GITLAB_PASSWORD
 
 const downloadRepo = (url, tmpPath) => {
   return new Promise((resolve, reject) => {
