@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.1](https://github.com/Laev/Publisher/compare/v0.9.0...v0.9.1) (2022-04-08)
+
+
+### Bug Fixes
+
+* **env:** in order to eliminate GitHub warning to delete false environment variables value ([860a063](https://github.com/Laev/Publisher/commit/860a0639ec27537fd8f05ce40520d7d708125e47))
+
 ## [0.9.0](https://github.com/Laev/Publisher/compare/v0.8.4-rc7...v0.9.0) (2022-04-08)
 
 
