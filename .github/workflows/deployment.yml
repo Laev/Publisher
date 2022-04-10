@@ -12,7 +12,8 @@ jobs:
   macBuildAndRelease:
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [macos-latest]
+        # os: [macos-latest, ubuntu-latest, windows-latest]
 
     runs-on: ${{ matrix.os }}
 
@@ -38,7 +39,7 @@ jobs:
   winBuildAndRelease:
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [windows-latest]
 
     runs-on: ${{ matrix.os }}
 
