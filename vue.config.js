@@ -7,10 +7,11 @@
  */
 const path = require('path')
 const Dotenv = require('dotenv-webpack')
-const envPath =
-  !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
-    ? './env/.env.local'
-    : `./env/.env`
+
+const plugins = []
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+  plugins.push(new Dotenv({ expand: true, path: './env/.env.local' }))
+}
 
 function resolve(dir) {
   return path.join(__dirname, dir)
@@ -59,7 +60,7 @@ module.exports = {
         }
       ]
     },
-    plugins: [new Dotenv({ expand: true, path: envPath })]
+    plugins
   },
   pluginOptions: {
     electronBuilder: {

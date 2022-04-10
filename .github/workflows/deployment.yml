@@ -6,38 +6,57 @@ name: Deployment
 on:
   push:
     tags:
-    - 'v*'
+      - "v*"
 
 jobs:
-  buildAndRelease:
-    runs-on: ${{ matrix.os }}
-
+  macBuildAndRelease:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        # package_manager: [npm, yarn]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
-    - name: Check out Git repository
-      uses: actions/checkout@v3
+      - name: Check out Git repository
+        uses: actions/checkout@v3
 
-    - name: Use Node.js 14
-      uses: actions/setup-node@v3
-      with:
-        node-version: 14.x
-        cache: 'yarn'
-    
-    - name: Install Dependencies
-      run: yarn install
-    
-    - name: Build
-      run: yarn electron:build
-      
-    - name: Win build  
-      run: yarn electron:win-build
+      - name: Use Node.js 14
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
+          cache: "yarn"
 
-    - name: Release
-      run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && yarn electron:release
-      
-    - name: Win release
-    - run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && yarn electron:win-release
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn electron:build
+
+      - name: Release
+        run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && yarn electron:release
+
+  winBuildAndRelease:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
+          cache: "yarn"
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn electron:win-build
+
+      - name: Release
+        run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && yarn electron:win-release
