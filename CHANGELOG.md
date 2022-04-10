@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.5](https://github.com/Laev/Publisher/compare/v0.9.4...v0.9.5) (2022-04-10)
+
+
+### Bug Fixes
+
+* **lockfile:** remove yarn lock file ([ec69261](https://github.com/Laev/Publisher/commit/ec692614f5f4daef46c7153f13ecca7040a8531e))
+
 ### [0.9.4](https://github.com/Laev/Publisher/compare/v0.9.3...v0.9.4) (2022-04-10)
 
 
