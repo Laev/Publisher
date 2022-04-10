@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.6](https://github.com/Laev/Publisher/compare/v0.9.5...v0.9.6) (2022-04-10)
+
+
+### Bug Fixes
+
+* **lockfile:** update lock file ([b34b1f9](https://github.com/Laev/Publisher/commit/b34b1f9e47d16cccff68a6206e969745666348bb))
+
 ### [0.9.5](https://github.com/Laev/Publisher/compare/v0.9.4...v0.9.5) (2022-04-10)
 
 
