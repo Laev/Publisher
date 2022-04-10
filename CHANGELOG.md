@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.4](https://github.com/Laev/Publisher/compare/v0.9.3...v0.9.4) (2022-04-10)
+
+
+### Bug Fixes
+
+* **workflow:** yml update ([0548511](https://github.com/Laev/Publisher/commit/0548511adac371d2de35415eb684c7edbb4afd40))
+
 ### [0.9.3](https://github.com/Laev/Publisher/compare/v0.9.2...v0.9.3) (2022-04-08)
 
 
