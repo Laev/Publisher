@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.7](https://github.com/Laev/Publisher/compare/v0.9.6...v0.9.7) (2022-04-10)
+
+
+### Bug Fixes
+
+* **workflow:** config update ([93d5aaf](https://github.com/Laev/Publisher/commit/93d5aaf70103f60cb01b1b3e28b10a8f8240966c))
+
 ### [0.9.6](https://github.com/Laev/Publisher/compare/v0.9.5...v0.9.6) (2022-04-10)
 
 
