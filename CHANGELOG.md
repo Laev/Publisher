@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.9](https://github.com/Laev/Publisher/compare/v0.9.8...v0.9.9) (2022-04-11)
+
+
+### Bug Fixes
+
+* **releasetype:** change releaseType ([8caab32](https://github.com/Laev/Publisher/commit/8caab32e34f3150411a33eb5676d60ea19a54903))
+
 ### [0.9.8](https://github.com/Laev/Publisher/compare/v0.9.7...v0.9.8) (2022-04-10)
 
 
