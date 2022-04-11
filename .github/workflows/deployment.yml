@@ -30,35 +30,33 @@ jobs:
           node-version: 14.x
 
       - name: Make .env file
-        uses: SpicyPizza/create-envfile@v1.3
-        with:
-          envkey_AUTH_PRIVATEKEY: ${{secrets.AUTH_PRIVATEKEY}}
-          envkey_AUTH_INSIDEDEVELOPERUSERGROUP_ARRAY: ${{secrets.AUTH_INSIDEDEVELOPERUSERGROUP_ARRAY}}
-          envkey_AUTH_INSIDEPASSWORD: ${{secrets.AUTH_INSIDEPASSWORD}}
-          envkey_AUTH_INSIDEPMUSERGROUP_ARRAY: ${{secrets.AUTH_INSIDEPMUSERGROUP_ARRAY}}
-          envkey_JENKINS_BASEURL: ${{secrets.JENKINS_BASEURL}}
-          envkey_JENKINS_USERNAME: ${{secrets.JENKINS_USERNAME}}
-          envkey_JENKINS_PASSWORD: ${{secrets.JENKINS_PASSWORD}}
-          envkey_GITLAB_HOST: ${{secrets.GITLAB_HOST}}
-          envkey_GITLAB_BASEURL: ${{secrets.GITLAB_BASEURL}}
-          envkey_GITLAB_USERNAME: ${{secrets.GITLAB_USERNAME}}
-          envkey_GITLAB_PASSWORD: ${{secrets.GITLAB_PASSWORD}}
-          envkey_GITLAB_PRIVATE_TOKEN: ${{secrets.GITLAB_PRIVATE_TOKEN}}
-          envkey_SONARQUBE_SERVER: ${{secrets.SONARQUBE_SERVER}}
-          envkey_SONARQUBE_USERNAME: ${{secrets.SONARQUBE_USERNAME}}
-          envkey_SONARQUBE_PASSWORD: ${{secrets.SONARQUBE_PASSWORD}}
-          envkey_SONARQUBE_TOKEN: ${{secrets.SONARQUBE_TOKEN}}
-          envkey_ALIYUN_REGIONID: ${{secrets.ALIYUN_REGIONID}}
-          envkey_ALIYUN_ACCESSKEYID: ${{secrets.ALIYUN_ACCESSKEYID}}
-          envkey_ALIYUN_ACCESSKEYSECRET: ${{secrets.ALIYUN_ACCESSKEYSECRET}}
-          envkey_DEF_MAIL_ADDRESSEE: ${{secrets.DEF_MAIL_ADDRESSEE}}
-          envkey_DEF_MAIL_SENDER_USER: ${{secrets.DEF_MAIL_SENDER_USER}}
-          envkey_DEF_MAIL_SENDER_PASS: ${{secrets.DEF_MAIL_SENDER_PASS}}
-          envkey_PMLIST_ARRAY: ${{secrets.PMLIST_ARRAY}}
-          envkey_ENVTYPES_ARRAY: ${{secrets.ENVTYPES_ARRAY}}
-          directory: env
-          file_name: .env
-          fail_on_empty: false
+        run: |
+          touch env/.env
+          echo AUTH_PRIVATEKEY=${{secrets.AUTH_PRIVATEKEY}} >> env/.env
+          echo AUTH_INSIDEDEVELOPERUSERGROUP_ARRAY=${{secrets.AUTH_INSIDEDEVELOPERUSERGROUP_ARRAY}} >> env/.env
+          echo AUTH_INSIDEPASSWORD=${{secrets.AUTH_INSIDEPASSWORD}} >> env/.env
+          echo AUTH_INSIDEPMUSERGROUP_ARRAY=${{secrets.AUTH_INSIDEPMUSERGROUP_ARRAY}} >> env/.env
+          echo JENKINS_BASEURL=${{secrets.JENKINS_BASEURL}} >> env/.env
+          echo JENKINS_USERNAME=${{secrets.JENKINS_USERNAME}} >> env/.env
+          echo JENKINS_PASSWORD=${{secrets.JENKINS_PASSWORD}} >> env/.env
+          echo GITLAB_HOST=${{secrets.GITLAB_HOST}} >> env/.env
+          echo GITLAB_BASEURL=${{secrets.GITLAB_BASEURL}} >> env/.env
+          echo GITLAB_USERNAME=${{secrets.GITLAB_USERNAME}} >> env/.env
+          echo GITLAB_PASSWORD=${{secrets.GITLAB_PASSWORD}} >> env/.env
+          echo GITLAB_PRIVATE_TOKEN=${{secrets.GITLAB_PRIVATE_TOKEN}} >> env/.env
+          echo SONARQUBE_SERVER=${{secrets.SONARQUBE_SERVER}} >> env/.env
+          echo SONARQUBE_USERNAME=${{secrets.SONARQUBE_USERNAME}} >> env/.env
+          echo SONARQUBE_PASSWORD=${{secrets.SONARQUBE_PASSWORD}} >> env/.env
+          echo SONARQUBE_TOKEN=${{secrets.SONARQUBE_TOKEN}} >> env/.env
+          echo ALIYUN_REGIONID=${{secrets.ALIYUN_REGIONID}} >> env/.env
+          echo ALIYUN_ACCESSKEYID=${{secrets.ALIYUN_ACCESSKEYID}} >> env/.env
+          echo ALIYUN_ACCESSKEYSECRET=${{secrets.ALIYUN_ACCESSKEYSECRET}} >> env/.env
+          echo DEF_MAIL_ADDRESSEE=${{secrets.DEF_MAIL_ADDRESSEE}} >> env/.env
+          echo DEF_MAIL_SENDER_USER=${{secrets.DEF_MAIL_SENDER_USER}} >> env/.env
+          echo DEF_MAIL_SENDER_PASS=${{secrets.DEF_MAIL_SENDER_PASS}} >> env/.env
+          echo PMLIST_ARRAY=${{secrets.PMLIST_ARRAY}} >> env/.env
+          echo ENVTYPES_ARRAY=${{secrets.ENVTYPES_ARRAY}} >> env/.env
+
 
       - name: Install Dependencies
         run: yarn install
@@ -89,35 +87,32 @@ jobs:
           node-version: 14.x
 
       - name: Make .env file
-        uses: SpicyPizza/create-envfile@v1.3
-        with:
-          envkey_AUTH_PRIVATEKEY: ${{secrets.AUTH_PRIVATEKEY}}
-          envkey_AUTH_INSIDEDEVELOPERUSERGROUP_ARRAY: ${{secrets.AUTH_INSIDEDEVELOPERUSERGROUP_ARRAY}}
-          envkey_AUTH_INSIDEPASSWORD: ${{secrets.AUTH_INSIDEPASSWORD}}
-          envkey_AUTH_INSIDEPMUSERGROUP_ARRAY: ${{secrets.AUTH_INSIDEPMUSERGROUP_ARRAY}}
-          envkey_JENKINS_BASEURL: ${{secrets.JENKINS_BASEURL}}
-          envkey_JENKINS_USERNAME: ${{secrets.JENKINS_USERNAME}}
-          envkey_JENKINS_PASSWORD: ${{secrets.JENKINS_PASSWORD}}
-          envkey_GITLAB_HOST: ${{secrets.GITLAB_HOST}}
-          envkey_GITLAB_BASEURL: ${{secrets.GITLAB_BASEURL}}
-          envkey_GITLAB_USERNAME: ${{secrets.GITLAB_USERNAME}}
-          envkey_GITLAB_PASSWORD: ${{secrets.GITLAB_PASSWORD}}
-          envkey_GITLAB_PRIVATE_TOKEN: ${{secrets.GITLAB_PRIVATE_TOKEN}}
-          envkey_SONARQUBE_SERVER: ${{secrets.SONARQUBE_SERVER}}
-          envkey_SONARQUBE_USERNAME: ${{secrets.SONARQUBE_USERNAME}}
-          envkey_SONARQUBE_PASSWORD: ${{secrets.SONARQUBE_PASSWORD}}
-          envkey_SONARQUBE_TOKEN: ${{secrets.SONARQUBE_TOKEN}}
-          envkey_ALIYUN_REGIONID: ${{secrets.ALIYUN_REGIONID}}
-          envkey_ALIYUN_ACCESSKEYID: ${{secrets.ALIYUN_ACCESSKEYID}}
-          envkey_ALIYUN_ACCESSKEYSECRET: ${{secrets.ALIYUN_ACCESSKEYSECRET}}
-          envkey_DEF_MAIL_ADDRESSEE: ${{secrets.DEF_MAIL_ADDRESSEE}}
-          envkey_DEF_MAIL_SENDER_USER: ${{secrets.DEF_MAIL_SENDER_USER}}
-          envkey_DEF_MAIL_SENDER_PASS: ${{secrets.DEF_MAIL_SENDER_PASS}}
-          envkey_PMLIST_ARRAY: ${{secrets.PMLIST_ARRAY}}
-          envkey_ENVTYPES_ARRAY: ${{secrets.ENVTYPES_ARRAY}}
-          directory: env
-          file_name: .env
-          fail_on_empty: false
+        run: |
+          touch env/.env
+          echo AUTH_PRIVATEKEY=${{secrets.AUTH_PRIVATEKEY}} >> env/.env
+          echo AUTH_INSIDEDEVELOPERUSERGROUP_ARRAY=${{secrets.AUTH_INSIDEDEVELOPERUSERGROUP_ARRAY}} >> env/.env
+          echo AUTH_INSIDEPASSWORD=${{secrets.AUTH_INSIDEPASSWORD}} >> env/.env
+          echo AUTH_INSIDEPMUSERGROUP_ARRAY=${{secrets.AUTH_INSIDEPMUSERGROUP_ARRAY}} >> env/.env
+          echo JENKINS_BASEURL=${{secrets.JENKINS_BASEURL}} >> env/.env
+          echo JENKINS_USERNAME=${{secrets.JENKINS_USERNAME}} >> env/.env
+          echo JENKINS_PASSWORD=${{secrets.JENKINS_PASSWORD}} >> env/.env
+          echo GITLAB_HOST=${{secrets.GITLAB_HOST}} >> env/.env
+          echo GITLAB_BASEURL=${{secrets.GITLAB_BASEURL}} >> env/.env
+          echo GITLAB_USERNAME=${{secrets.GITLAB_USERNAME}} >> env/.env
+          echo GITLAB_PASSWORD=${{secrets.GITLAB_PASSWORD}} >> env/.env
+          echo GITLAB_PRIVATE_TOKEN=${{secrets.GITLAB_PRIVATE_TOKEN}} >> env/.env
+          echo SONARQUBE_SERVER=${{secrets.SONARQUBE_SERVER}} >> env/.env
+          echo SONARQUBE_USERNAME=${{secrets.SONARQUBE_USERNAME}} >> env/.env
+          echo SONARQUBE_PASSWORD=${{secrets.SONARQUBE_PASSWORD}} >> env/.env
+          echo SONARQUBE_TOKEN=${{secrets.SONARQUBE_TOKEN}} >> env/.env
+          echo ALIYUN_REGIONID=${{secrets.ALIYUN_REGIONID}} >> env/.env
+          echo ALIYUN_ACCESSKEYID=${{secrets.ALIYUN_ACCESSKEYID}} >> env/.env
+          echo ALIYUN_ACCESSKEYSECRET=${{secrets.ALIYUN_ACCESSKEYSECRET}} >> env/.env
+          echo DEF_MAIL_ADDRESSEE=${{secrets.DEF_MAIL_ADDRESSEE}} >> env/.env
+          echo DEF_MAIL_SENDER_USER=${{secrets.DEF_MAIL_SENDER_USER}} >> env/.env
+          echo DEF_MAIL_SENDER_PASS=${{secrets.DEF_MAIL_SENDER_PASS}} >> env/.env
+          echo PMLIST_ARRAY=${{secrets.PMLIST_ARRAY}} >> env/.env
+          echo ENVTYPES_ARRAY=${{secrets.ENVTYPES_ARRAY}} >> env/.env
 
       - name: Install Dependencies
         run: yarn install
