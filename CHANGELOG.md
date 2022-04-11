@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.16](https://github.com/Laev/Publisher/compare/v0.9.15...v0.9.16) (2022-04-11)
+
 ### [0.9.15](https://github.com/Laev/Publisher/compare/v0.9.14...v0.9.15) (2022-04-11)
 
 ### [0.9.14](https://github.com/Laev/Publisher/compare/v0.9.13...v0.9.14) (2022-04-11)
