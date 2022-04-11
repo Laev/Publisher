@@ -12,13 +12,13 @@ jobs:
   macBuildAndRelease:
     strategy:
       matrix:
-        os: [macos-latest]
+        os: [ubuntu-latest]
         # os: [macos-latest, ubuntu-latest, windows-latest]
 
     runs-on: ${{ matrix.os }}
 
     env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN}}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
     steps:
       - name: Check out Git repository
@@ -28,7 +28,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14.x
-          cache: "yarn"
 
       - name: Install Dependencies
         run: yarn install
@@ -37,17 +36,17 @@ jobs:
         run: yarn electron:build
 
       - name: Release
-        run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && yarn electron:release
+        run: yarn electron:release
 
   winBuildAndRelease:
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
 
     env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN}}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
     steps:
       - name: Check out Git repository
@@ -57,7 +56,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14.x
-          cache: "yarn"
 
       - name: Install Dependencies
         run: yarn install
@@ -66,4 +64,4 @@ jobs:
         run: yarn electron:win-build
 
       - name: Release
-        run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && yarn electron:win-release
+        run: yarn electron:win-release
