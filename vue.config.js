@@ -77,7 +77,7 @@ module.exports = {
             provider: 'github',
             owner: 'Laev',
             repo: 'Publisher',
-            releaseType: 'release'
+            releaseType: 'draft'
           }
         ],
         snap: {
