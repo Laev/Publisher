@@ -11,6 +11,8 @@ const Dotenv = require('dotenv-webpack')
 const plugins = []
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
   plugins.push(new Dotenv({ expand: true, path: './env/.env.local' }))
+} else {
+  plugins.push(new Dotenv({ expand: true, path: './env/.env' }))
 }
 
 function resolve(dir) {
