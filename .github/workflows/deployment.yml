@@ -56,7 +56,6 @@ jobs:
           echo DEF_MAIL_SENDER_PASS=${{secrets.DEF_MAIL_SENDER_PASS}} >> env/.env
           echo PMLIST_ARRAY=${{secrets.PMLIST_ARRAY}} >> env/.env
           echo ENVTYPES_ARRAY=${{secrets.ENVTYPES_ARRAY}} >> env/.env
-          cat env/.env
 
       - name: Install Dependencies
         run: yarn install
@@ -113,7 +112,6 @@ jobs:
           echo DEF_MAIL_SENDER_PASS=${{secrets.DEF_MAIL_SENDER_PASS}} >> env/.env
           echo PMLIST_ARRAY=${{secrets.PMLIST_ARRAY}} >> env/.env
           echo ENVTYPES_ARRAY=${{secrets.ENVTYPES_ARRAY}} >> env/.env
-          cat env/.env
 
       - name: Install Dependencies
         run: yarn install

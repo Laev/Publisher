@@ -37,7 +37,7 @@
     "fs-extra": "^9.0.1",
     "imap-simple": "^5.0.0",
     "js-base64": "^3.6.0",
-    "jsencrypt": "^3.0.0-rc.1",
+    "jsencrypt": "^3.2.1",
     "lodash-es": "^4.17.20",
     "lowdb": "^1.0.0",
     "mailparser": "^3.0.1",
