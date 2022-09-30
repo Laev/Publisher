@@ -38,7 +38,7 @@ jobs:
           echo AUTH_INSIDEPMUSERGROUP_ARRAY=${{secrets.AUTH_INSIDEPMUSERGROUP_ARRAY}} >> env/.env
           echo JENKINS_BASEURL=${{secrets.JENKINS_BASEURL}} >> env/.env
           echo JENKINS_USERNAME=${{secrets.JENKINS_USERNAME}} >> env/.env
-          echo JENKINS_PASSWORD=${{secrets.JENKINS_PASSWORD}} >> env/.env
+          echo JENKINS_API_TOKEN=${{secrets.JENKINS_API_TOKEN}} >> env/.env
           echo GITLAB_HOST=${{secrets.GITLAB_HOST}} >> env/.env
           echo GITLAB_BASEURL=${{secrets.GITLAB_BASEURL}} >> env/.env
           echo GITLAB_USERNAME=${{secrets.GITLAB_USERNAME}} >> env/.env
@@ -94,7 +94,7 @@ jobs:
           echo AUTH_INSIDEPMUSERGROUP_ARRAY=${{secrets.AUTH_INSIDEPMUSERGROUP_ARRAY}} >> env/.env
           echo JENKINS_BASEURL=${{secrets.JENKINS_BASEURL}} >> env/.env
           echo JENKINS_USERNAME=${{secrets.JENKINS_USERNAME}} >> env/.env
-          echo JENKINS_PASSWORD=${{secrets.JENKINS_PASSWORD}} >> env/.env
+          echo JENKINS_API_TOKEN=${{secrets.JENKINS_API_TOKEN}} >> env/.env
           echo GITLAB_HOST=${{secrets.GITLAB_HOST}} >> env/.env
           echo GITLAB_BASEURL=${{secrets.GITLAB_BASEURL}} >> env/.env
           echo GITLAB_USERNAME=${{secrets.GITLAB_USERNAME}} >> env/.env

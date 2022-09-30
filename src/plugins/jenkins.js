@@ -11,7 +11,7 @@ import _axios from '@/request'
 const baseUrl = process.env.JENKINS_BASEURL
 const authorization = {
   username: process.env.JENKINS_USERNAME,
-  password: process.env.JENKINS_PASSWORD
+  password: process.env.JENKINS_API_TOKEN // api
 }
 const request = (
   actionUrl,
