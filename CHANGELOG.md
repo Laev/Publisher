@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.21](https://github.com/Laev/Publisher/compare/v0.9.20...v0.9.21) (2022-09-30)
+
+
+### Features
+
+* **auth:** update security strategy ([6e67741](https://github.com/Laev/Publisher/commit/6e67741036bbd60db968ea794038ecfd58ec342d))
+
 ### [0.9.20](https://github.com/Laev/Publisher/compare/v0.9.19...v0.9.20) (2022-08-31)
 
 ### [0.9.19](https://github.com/Laev/Publisher/compare/v0.9.18...v0.9.19) (2022-04-19)
